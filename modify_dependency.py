@@ -1,16 +1,22 @@
 from pathlib import Path
 from typing import Optional
+import os
 import json
 
 
-class Modify:
+class Dependency:
     def __init__(self,
             *, path_dir: Optional[Path] = Path('./Django_req/requirements.txt')) -> None:
         self._data = None
         self._dependencies = None
         self._path_file = path_dir
     
-    def __str__(self) -> json:
+    def __str__(self) -> str:
+        return f'Dependency_file={os.path.basename(self._path_file)}\n' \
+               f'Relative_path={self._path_file}'
+
+    @property
+    def dependencies(self) -> json:
         with open(self._path_file, 'r') as f:
             list_dep = [
                         tuple(item.strip().split('=='))
@@ -50,9 +56,14 @@ def main():
                 'Django': '4.1.4',
                 'pandas': '1.5.1',
             }
-    m = Modify()
-    m.change_req(dependencies)
+    m = Dependency()
+
+    # Uncomment this line for changing
+    # m.change_req(dependencies)
+    
     print(m)
+    print(m.dependencies)
+
 
 if __name__ == '__main__':
     main()
