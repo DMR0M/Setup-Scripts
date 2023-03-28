@@ -17,9 +17,9 @@ class AppTypes(Impls):
     SVELTE = 'svelte'
 
     # TypeScript Apps
-    REACT-TS = 'react-ts'
-    VUE-TS = 'vue-ts'
-    SVELTE-TS = 'svelte-ts'
+    REACT_TS = 'react-ts'
+    VUE_TS = 'vue-ts'
+    SVELTE_TS = 'svelte-ts'
 
 
 class WebApps:
