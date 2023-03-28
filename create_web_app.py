@@ -16,6 +16,11 @@ class AppTypes(Impls):
     VUE = 'vue'
     SVELTE = 'svelte'
 
+    # TypeScript Apps
+    REACT-TS = 'react-ts'
+    VUE-TS = 'vue-ts'
+    SVELTE-TS = 'svelte-ts'
+
 
 class WebApps:
     _enum_app_list = AppTypes.list()
@@ -26,7 +31,7 @@ class WebApps:
         self._app_name = app_name
         self._location = path_dir
         
-    def __get__(self, instance, owner):
+    def __str__(self, instance, owner):
         return f'Command: npm create vite@latest {self._app_name} -- --template {self._app_type}'
 
     def create_app(self, app):
