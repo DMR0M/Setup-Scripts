@@ -9,7 +9,7 @@ from typing import Optional, Iterable
 def create_project(dir_name: str, package_name: str, *,
         parent_dir: Optional[str] =  Path.home() / 'Desktop',
         make_files: Optional[Iterable] = ['main.py', '__init__.py'],
-        dependencies: Optional[Path] = 'Django_req/requirements.txt') -> None:
+        dependencies: Optional[Path] = 'dependencies/requirements.txt') -> None:
     """Create a python project with venv"""
     curr_path: Path = Path.cwd()
 

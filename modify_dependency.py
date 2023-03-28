@@ -6,7 +6,7 @@ import json
 
 class Dependency:
     def __init__(self,
-            *, path_dir: Optional[Path] = Path('./Django_req/requirements.txt')) -> None:
+            *, path_dir: Optional[Path] = Path('./dependencies/requirements.txt')) -> None:
         self._data = None
         self._dependencies = None
         self._path_file = path_dir
