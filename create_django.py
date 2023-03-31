@@ -27,7 +27,7 @@ def create_project(dir_name: str, package_name: str, *,
         os.chdir(package_name)
 
         # Copy the list of dependencies to created project folder
-        shutil.copy(curr_path / 'Django_req' / 'requirements.txt', Path.cwd().parent)
+        shutil.copy(curr_path / dependencies, Path.cwd().parent)
 
         for make in tqdm(make_files, desc='Creating files in package'):
             Path.touch(make)
