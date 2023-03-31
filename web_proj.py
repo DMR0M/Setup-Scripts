@@ -79,11 +79,13 @@ class TemplateMaker:
 
 
 def main():
-    sm = TemplateMaker('Web')
-    print(sm)
-    
+    # Enter a web project name
+    proj_name = input('Enter a web project name: ')
+    tm = TemplateMaker(proj_name)
+ 
     # Default templates
-    sm.setup_project()
+    tm.save_templates()
+    tm.setup_project()
     
     
 
